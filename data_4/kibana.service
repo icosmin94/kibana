@@ -1,0 +1,13 @@
+[Unit]
+Description=Kibana Service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/root/kibana/bin/kibana --allow-root --config /root/kibana/config/kibana.yml
+
+[Install]
+WantedBy=multi-user.target
